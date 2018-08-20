@@ -22,6 +22,7 @@
   "homepage": "https://github.com/airfec/marcellino-proxy#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "http-proxy-middleware": "^0.18.0"
+    "http-proxy-middleware": "^0.18.0",
+    "nodemon": "^1.18.3"
   }
 }

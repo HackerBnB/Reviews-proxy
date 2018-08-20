@@ -21,13 +21,13 @@ app.get('/rooms/:id', function(req, res) {
 });
 
 // proxy to marcellino server
-app.use(
-  '/api/rooms/:id/photos',
-  proxy({
-    target: process.env.PROXY_COMPONENT_MARCELLINO || 'http://127.0.0.1:3004',
-    changeOrigin: true
-  })
-);
+// app.use(
+//   '/api/rooms/:id/photos',
+//   proxy({
+//     target: process.env.PROXY_COMPONENT_MARCELLINO || 'http://127.0.0.1:3004',
+//     changeOrigin: true
+//   })
+// );
 
 // proxy to ricky server
 app.use(
@@ -39,22 +39,22 @@ app.use(
 );
 
 // proxy to ozge server
-app.use(
-  '/api/rooms/:id/bookings',
-  proxy({
-    target: process.env.PROXY_COMPONENT_NICK || 'http://127.0.0.1:3001',
-    changeOrigin: true
-  })
-);
+// app.use(
+//   '/api/rooms/:id/bookings',
+//   proxy({
+//     target: process.env.PROXY_COMPONENT_NICK || 'http://127.0.0.1:3001',
+//     changeOrigin: true
+//   })
+// );
 
-// proxy to ozge server
-app.use(
-  '/api/rooms/:id',
-  proxy({
-    target: process.env.PROXY_COMPONENT_OZGE || 'http://127.0.0.1:3003'
-    // changeOrigin: false
-  })
-);
+// // proxy to ozge server
+// app.use(
+//   '/api/rooms/:id',
+//   proxy({
+//     target: process.env.PROXY_COMPONENT_OZGE || 'http://127.0.0.1:3003'
+//     // changeOrigin: false
+//   })
+// );
 
 app.listen(app.get('port'), () =>
   console.log('Example app listening on port', app.get('port'))
